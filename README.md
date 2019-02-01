@@ -37,8 +37,17 @@ translation and language modeling datasets.
 # Requirements and Installation
 * A [PyTorch installation](http://pytorch.org/)
 * For training new models, you'll also need an NVIDIA GPU and [NCCL](https://github.com/NVIDIA/nccl)
+  ```
+  make CUDA8_GENCODE="-gencode=arch=compute_35,code=sm_35 -gencode=arch=compute_50,code=sm_50 -gencode=arch=compute_60,code=sm_60 -gencode=arch=compute_61,code=sm_61"
+  ```
 * Python version 3.6
-
+  ```
+  apt-get install software-properties-common python-software-properties
+  add-apt-repository ppa:jonathonf/python-3.6
+  apt-get update
+  apt-get install python3.6
+  python3.6 -V
+  ```
 Currently fairseq requires PyTorch version >= 1.0.0.
 Please follow the instructions here: https://github.com/pytorch/pytorch#installation.
 
