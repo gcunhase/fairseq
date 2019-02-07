@@ -37,8 +37,15 @@ translation and language modeling datasets.
 # Requirements and Installation
 * A [PyTorch installation](http://pytorch.org/)
 * For training new models, you'll also need an NVIDIA GPU and [NCCL](https://github.com/NVIDIA/nccl)
+  * For CUDA 9.0, [download NCCL](https://developer.nvidia.com/nccl/nccl2-download-survey) and follow [link](https://docs.nvidia.com/deeplearning/sdk/nccl-install-guide/index.html)
   ```
-  make CUDA8_GENCODE="-gencode=arch=compute_35,code=sm_35 -gencode=arch=compute_50,code=sm_50 -gencode=arch=compute_60,code=sm_60 -gencode=arch=compute_61,code=sm_61"
+  sudo dpkg -i nccl-repo-<version>.deb
+  sudo apt update
+  sudo apt install libnccl2 libnccl-dev
+  ```
+  * Else:
+  ```
+  sudo apt install libnccl2=2.0.0-1+cuda8.0 libnccl-dev=2.0.0-1+cuda8.0
   ```
 * Python version 3.6
   ```
